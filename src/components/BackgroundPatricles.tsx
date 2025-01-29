@@ -1,10 +1,7 @@
-import { useEffect, useMemo, useState } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import {
-  type Container,
-  type ISourceOptions,
-} from "@tsparticles/engine";
-import { loadSlim } from "@tsparticles/slim";
+import { useEffect, useMemo, useState } from 'react';
+import Particles, { initParticlesEngine } from '@tsparticles/react';
+import { type Container, type ISourceOptions } from '@tsparticles/engine';
+import { loadSlim } from '@tsparticles/slim';
 
 export function BackgroundParticles() {
   const [init, setInit] = useState(false);
@@ -25,13 +22,13 @@ export function BackgroundParticles() {
     () => ({
       background: {
         color: {
-          value: "#1e1e2e",
+          value: '#1e1e2e',
         },
       },
       fpsLimit: 120,
       particles: {
         color: {
-          value: "#ffffff",
+          value: '#ffffff',
         },
         links: {
           distance: 100,
@@ -52,7 +49,7 @@ export function BackgroundParticles() {
           value: 1,
         },
         shape: {
-          type: "circle",
+          type: 'circle',
         },
         size: {
           value: 1.2,
@@ -60,7 +57,7 @@ export function BackgroundParticles() {
       },
       detectRetina: true,
     }),
-    [],
+    []
   );
 
   if (init) {
@@ -69,10 +66,9 @@ export function BackgroundParticles() {
         id="tsparticles"
         particlesLoaded={particlesLoaded}
         options={options}
-        className="z-[-10]"
       />
     );
   }
 
   return <></>;
-};
+}
