@@ -20,7 +20,7 @@ jobs:
       - name: Build site
         run: bun run build
       - run: mkdir build/
-      - run: mv -r dist/* build/
+      - run: cp -r dist/* build/
 
       - name: Commit and push built files
         run: |
