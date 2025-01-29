@@ -3,12 +3,10 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import {
   type Container,
   type ISourceOptions,
-  MoveDirection,
-  OutMode,
 } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 
-const BackgroundParticles = () => {
+export function BackgroundParticles() {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
@@ -31,48 +29,33 @@ const BackgroundParticles = () => {
         },
       },
       fpsLimit: 120,
-      interactivity: {
-        events: {
-          onHover: {
-            enable: true,
-            mode: "repulse",
-          },
-        },
-      },
       particles: {
         color: {
           value: "#ffffff",
         },
         links: {
-          color: "#ffffff",
-          distance: 115,
+          distance: 100,
           enable: true,
-          opacity: 0.25,
-          width: 1,
+          opacity: 0.85,
         },
         move: {
           enable: true,
-          outModes: {
-            default: OutMode.out,
-          },
-          random: false,
           speed: 1.5,
-          straight: false,
         },
         number: {
           density: {
-            enable: true,
+            enable: false,
           },
-          value: 80,
+          value: 100,
         },
         opacity: {
-          value: 0.5,
+          value: 1,
         },
         shape: {
           type: "circle",
         },
         size: {
-          value: 1,
+          value: 1.2,
         },
       },
       detectRetina: true,
@@ -86,11 +69,10 @@ const BackgroundParticles = () => {
         id="tsparticles"
         particlesLoaded={particlesLoaded}
         options={options}
+        className="z-[-10]"
       />
     );
   }
 
   return <></>;
 };
-
-export { BackgroundParticles }
